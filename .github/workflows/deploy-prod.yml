@@ -96,12 +96,6 @@ jobs:
         with:
           node-version: ${{ env.NODE }}
 
-      - name: Serve site from subpath
-        run: |
-          mkdir deploy/
-          mv dist deploy/dashboard
-          cp deploy/dashboard/index.html deploy/index.html
-
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
