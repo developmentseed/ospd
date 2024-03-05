@@ -10,11 +10,12 @@ on:
   push:
     branches:
     - 'main'
+    - 'deploy'
 
 env:
   NODE: 16
-  DOMAIN_PROD: https://www.earthdata.nasa.gov/dashboard
-  DEPLOY_BUCKET_PROD: climatedashboard
+  DOMAIN_PROD: https://d3az0w890ohf9k.cloudfront.net
+  DEPLOY_BUCKET_PROD: ogc-ospd-veda-frontend
   DEPLOY_BUCKET_PROD_REGION: us-east-1
 
 jobs:
