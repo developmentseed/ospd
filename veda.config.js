@@ -15,7 +15,8 @@ module.exports = {
     // Content for the about page.
     // Type: Content override
     aboutContent: './overrides/about.mdx',
-    headerBrand: './overrides/header-brand/index.mdx'
+    headerBrand: './overrides/header-brand/index.mdx',
+    pageFooter: './overrides/page-footer/index.mdx'
   },
 
   strings: {
