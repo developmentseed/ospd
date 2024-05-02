@@ -1,14 +1,14 @@
 ---
 id: conus-reach
-name: 'Stream network across the Contiguous United States'
-description: 'This dataset describes the Stream network across the Contiguous United States delineated using Soil and Water Assessment Tool'
-featured: true
+name: "Stream network across the Contiguous United States"
+description: "This dataset describes the Stream network across the Contiguous United States delineated using Soil and Water Assessment Tool"
 media:
   src: ::file ./conus-reach.png
-  alt: 'Annual land cover maps for 2001 and 2020 (Bangladesh)'
+  alt: A map showing nitrate loads in the rivers of the United States on 07/01/2018
   author:
-    name: USGS
-    url: https://unsplash.com/photos/d59NHNtT_Ss
+    name: NASA
+    url: https://www.nasa.gov
+pubDate: 2023-03-03
 taxonomy:
   - name: Topics
     values:
@@ -16,22 +16,26 @@ taxonomy:
 layers:
   - id: conus-reach
     stacCol: conus-reach
-    name: 'Stream network across the Contiguous United States'
+    name: Stream network across the Contiguous United States
     type: raster
-    description: 'This dataset describes the Stream network across the Contiguous United States delineated using Soil and Water Assessment Tool'
+    description: "This dataset describes the Stream network across the Contiguous United States delineated using Soil and Water Assessment Tool"
     zoomExtent:
-      - 3
+      - 0
       - 20
     sourceParams:
       colormap_name: gnbu_r
-      rescale: "1,1"
+      rescale:
+        - 1
+        - 1
       nodata: 65535
+
 ---
 
 <Block>
   <Prose>
-
-    This dataset describes the Stream network across the Contiguous United States delineated using Soil and Water Assessment Tool.
+    ## About
+    
+	This dataset describes the Stream network across the Contiguous United States delineated using Soil and Water Assessment Tool
 
   </Prose>
 </Block>
