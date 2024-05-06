@@ -12,13 +12,10 @@ on:
     branches:
     - 'main'
     - 'develop'
-    - 'deploy-ghpages'
 
 env:
   NODE: 16
-  DOMAIN_PROD: https://developmentseed.org/veda-config-ospd/
-  DEPLOY_BUCKET_PROD: ogc-ospd-veda-frontend
-  DEPLOY_BUCKET_PROD_REGION: us-east-1
+  DOMAIN_PROD: https://developmentseed.org/ospd/
 
 jobs:
   build:
@@ -100,22 +97,6 @@ jobs:
         with:
           node-version: ${{ env.NODE }}
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          role-to-assume: ${{ secrets.DEPLOYMENT_ROLE_ARN }}
-          role-session-name: "veda-dashboard-prod-deployment"
-          aws-region: ${{ env.DEPLOY_BUCKET_PROD_REGION }}
-
-      - name: Deploy to S3 Production
-        run: |
-          aws s3 sync ./dist s3://${{ env.DEPLOY_BUCKET_PROD }} --cache-control max-age=604800 --delete
-
-      - name: Invalidate CloudFront cache
-        uses: oneyedev/aws-cloudfront-invalidation@v1
-        with:
-          distribution-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_PROD }}
-      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
