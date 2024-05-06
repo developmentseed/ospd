@@ -4,6 +4,7 @@ name: Deploy Production - MCP (S3)
 
 permissions:
   id-token: write
+  pages: write
   contents: read
 
 on:
@@ -11,6 +12,7 @@ on:
     branches:
     - 'main'
     - 'develop'
+    - 'deploy-ghpages'
 
 env:
   NODE: 16
@@ -111,3 +113,12 @@ jobs:
         uses: oneyedev/aws-cloudfront-invalidation@v1
         with:
           distribution-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_PROD }}
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
