@@ -1,3 +1,0 @@
-[submodule ".veda/ui"]
-	path = .veda/ui
-	url = https://github.com/NASA-IMPACT/veda-ui.git
