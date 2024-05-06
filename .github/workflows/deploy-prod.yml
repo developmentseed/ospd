@@ -16,7 +16,7 @@ on:
 
 env:
   NODE: 16
-  DOMAIN_PROD: https://d3az0w890ohf9k.cloudfront.net
+  DOMAIN_PROD: https://developmentseed.org/veda-config-ospd/
   DEPLOY_BUCKET_PROD: ogc-ospd-veda-frontend
   DEPLOY_BUCKET_PROD_REGION: us-east-1
 
