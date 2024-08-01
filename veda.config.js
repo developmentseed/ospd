@@ -25,5 +25,17 @@ module.exports = {
       one: ' Data Story',
       other: 'Data Stories'
     }
-  }
+  },
+
+  theme: {
+    color: {
+      primary: "#CF3F02",
+      link: "#2E86AB",
+    },
+  },
+  type: {
+    base: {
+      color: "#443F3F",
+    },
+  },
 };
